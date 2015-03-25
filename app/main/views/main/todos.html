@@ -4,6 +4,15 @@
 <:Body>
   <h1>Todos</h1>
 
+  <table class="table todo-table">
+    {{ _todos.each do |todo| }}
+      <tr>
+        <td>{{todo._label }}</td>
+      </tr>
+    {{ end }}
+  </table>
+
+
   <form e-submit="add_todo" role="form">
     <div class="form-group">
        <label>Add Todo:</label>
