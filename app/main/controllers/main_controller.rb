@@ -13,6 +13,10 @@ class MainController < Volt::ModelController
   def about
     # Add code for when the about view is loaded
   end
+
+  def num_completed
+    _todos.count {|v| v._complete.true? }
+  end
   
   def add_todo
     self._todos << page._new_todo

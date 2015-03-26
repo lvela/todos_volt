@@ -4,10 +4,17 @@
 <:Body>
   <h1>Todos</h1>
 
-  <table class="table todo-table">
+  <div class="row">
+    <div class="col-md-6">
+      <p>{{ num_completed }} completed</p>
+    </div>
+  </div>
+
+ <table class="table todo-table">
     {{ _todos.each do |todo| }}
       <tr>
-        <td>{{todo._label }}</td>
+        <td><input type="checkbox" checked="{{ todo._complete }}" /></td>
+        <td class="{{ if todo._complete }}complete{{ end }}">{{ todo._label }}</td>
         <td><button e-click="remove_todo(todo)">X</button></td>
       </tr>
     {{ end }}
