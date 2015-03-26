@@ -8,10 +8,10 @@
     {{ _todos.each do |todo| }}
       <tr>
         <td>{{todo._label }}</td>
+        <td><button e-click="remove_todo(todo)">X</button></td>
       </tr>
     {{ end }}
   </table>
-
 
   <form e-submit="add_todo" role="form">
     <div class="form-group">
