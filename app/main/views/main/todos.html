@@ -22,7 +22,6 @@
 
   <form e-submit="add_todo" role="form">
     <div class="form-group">
-       <label>Add Todo:</label>
-       <input class="form-control" type="text" value="{{ page._new_todo._label }}" />
+       <:fields:text label="Add todo" value="{{ page._new_todo._label }}" />
     </div>
   </form>

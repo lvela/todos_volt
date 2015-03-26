@@ -17,10 +17,15 @@ class MainController < Volt::ModelController
   def num_completed
     _todos.count {|v| v._complete.true? }
   end
+
+  def new
+    page._new_todo = _todos.buffer
+  end
   
   def add_todo
-    self._todos << page._new_todo
-    page._new_todo = {}
+    page._new_todo.save!.then do
+      new
+    end
   end
 
   def remove_todo(todo)
